@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+      <div class="container">
+            <header>
+                <div id="logo">
+                    <a href="HomePage.html">
+                        <img src="images/logo.png" alt="site logo">
+                        <h1> Welcome to DELL website</h1>
+                    </a>
+                </div>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="Page.html" id="home">Page1</a></li>
+                    <li><a href="page2.html">Page2</a></li>
+                    <li><a href="page3.html">Page3</a></li>
+                </ul>
+            </nav>
+    
+    
+            <main class="body">
+                <article id="form">
+                    <div class="column">
+                        <form id="container" action="">
+                           
+                              <label>first-name</label>
+                              <input type="text" id="p4" placeholder="first-name"><br /> <br/>
+                              <label>last-name</label>
+                              <input type="text" id="p5" placeholder="last-name"><br /> <br/>
+
+                              <label>country</label><br />
+                              <select id="s5">
+                                  <option>Egypt</option>
+                                  <option>paris</option>
+                                  <option>Newyork</option>
+                              </select> <br /><br />
+
+
+                              <label for="subj">subject:</label>
+                              <textarea id="p6" name="subject" rows="6" cols="40"></textarea>
+
+                        </form>
+    
+                    </div>
+                </article>
+                <article id="out"></article>
+                <button id="print" onclick="prin()">Print</button>
+            </main>
+            <footer class="footer">
+                <p>developed by Zainab</p>
+            </footer>
+           
+        </div>
+    
+        <script>
+            function prin() {
+                var x1 = document.getElementById("s5");
+                var i1 = x1.selectedIndex;
+
+
+                var p4 = document.getElementById("p4").value;
+                var p5 = document.getElementById("p5").value;
+                var p6 = document.getElementById("p6").value;
+
+                var text = "";
+
+                text += "<h1>" + "first-name :  "  +  p4 + "<h1/>";
+                text += "<h1>" + "last-name :  "   +  p5 + "<h1/>";
+                text += "<h1>" + " country :  " + x1.options[i1].text + "<h1/>";
+                text += "<h1>" +   "subject :  "    +  p6 + "<h1/>";
+ 
+
+                document.getElementById('out').innerHTML = text;
+            }
+            
+        </script>
+</body>
+</html>
